@@ -26,7 +26,7 @@ public class DingdanActivity extends Activity {
 	private EditText text1;
 	private EditText text2;
 	private String value1;
-	private static final String[] m1 = { "网银直接支付", "信用卡支付", "电话支付"}; // 存款方式
+	private static final String[] m1 = { "网银直接支付", "信用卡支付", "电话支付" }; // 存款方式
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class DingdanActivity extends Activity {
 		setContentView(R.layout.dingdan);
 		button1 = (Button) this.findViewById(R.id.Button21);
 		button1.setOnClickListener(myListener1);
-		
+
 		button2 = (Button) this.findViewById(R.id.Button22);
 		button2.setOnClickListener(myListener2);
 
@@ -72,14 +72,13 @@ public class DingdanActivity extends Activity {
 
 		public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			value1 = m1[arg2];   
+			value1 = m1[arg2];
 
 		}
 
 		public void onNothingSelected(AdapterView<?> arg0) {
 		}
 	}
-
 
 	private OnClickListener myListener1 = new Button.OnClickListener() {
 
@@ -91,23 +90,23 @@ public class DingdanActivity extends Activity {
 			int myid = declare.getId();
 			try {
 				String url = HttpUtil.BASE_URL
-						+ "JsServlet?myid="+ myid+ "&phone="
-								+ URLEncoder.encode(
-										URLEncoder.encode(phone, "UTF-8"),
-										"UTF-8")+ "&address="
-												+ URLEncoder.encode(
-														URLEncoder.encode(address, "UTF-8"),
-														"UTF-8")+ "&type="
-														+ URLEncoder.encode(
-																URLEncoder.encode(type, "UTF-8"),
-																"UTF-8");
+						+ "JsServlet?myid="
+						+ myid
+						+ "&phone="
+						+ URLEncoder.encode(URLEncoder.encode(phone, "UTF-8"),
+								"UTF-8")
+						+ "&address="
+						+ URLEncoder.encode(
+								URLEncoder.encode(address, "UTF-8"), "UTF-8")
+						+ "&type="
+						+ URLEncoder.encode(URLEncoder.encode(type, "UTF-8"),
+								"UTF-8");
 				// 查询返回结果
 				String result = HttpUtil.queryStringForPost(url);
-				System.out.println("resultresultresult  "+result);
-				if (!result.equals("0")) {//成功 //在这里跳转
+				System.out.println("resultresultresult  " + result);
+				if (!result.equals("0")) {// 成功 //在这里跳转
 					Intent intent = new Intent();
-					intent.setClass(DingdanActivity.this,
-							DdListActivity.class);
+					intent.setClass(DingdanActivity.this, DdListActivity.class);
 					startActivity(intent);
 				}
 			} catch (Exception e) {
@@ -115,14 +114,14 @@ public class DingdanActivity extends Activity {
 			}
 		}
 	};
-	
-	// 清空
-			private OnClickListener myListener2 = new Button.OnClickListener() {
-				public void onClick(View v) {
-					text1.setText("");
-					text2.setText("");
-				}
 
-			};
+	// 清空
+	private OnClickListener myListener2 = new Button.OnClickListener() {
+		public void onClick(View v) {
+			text1.setText("");
+			text2.setText("");
+		}
+
+	};
 
 }

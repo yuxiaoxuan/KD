@@ -62,23 +62,23 @@ public class MainActivity extends TabActivity implements OnClickListener{
 		mTabHost = getTabHost();
 		mTabHost.addTab(buildTabSpec(TAB_TAG_HOME, R.string.home_s,
 				R.drawable.home_h, mItent1));
-//		mTabHost.addTab(buildTabSpec(TAB_TAG_CHANNEL,R.string.new_s, 
-//				R.drawable.new_h, mItent2));
-//		mTabHost.addTab(buildTabSpec(TAB_TAG_SEARCH, R.string.class_s,
-//				R.drawable.class_h, mItent3));
-//		mTabHost.addTab(buildTabSpec(TAB_TAG_ACCOUNT,R.string.gwc_s, 
-//				R.drawable.gwc_h, mItent4));
+		mTabHost.addTab(buildTabSpec(TAB_TAG_CHANNEL,R.string.new_s, 
+				R.drawable.new_h, mItent2));
+		mTabHost.addTab(buildTabSpec(TAB_TAG_SEARCH, R.string.class_s,
+				R.drawable.class_h, mItent3));
+		mTabHost.addTab(buildTabSpec(TAB_TAG_ACCOUNT,R.string.gwc_s, 
+				R.drawable.gwc_h, mItent4));
 //		mTabHost.addTab(buildTabSpec(TAB_TAB_MORE, R.string.more_s,
 //				R.drawable.more_h, mItent5));
 	}
 
 	private void prepareIntent() {
 		// TODO Auto-generated method stub
-		mItent1 = new Intent(this, GoodsListActivity.class);
-//		mItent2 = new Intent(this, new_activity.class);
-//		mItent3 = new Intent(this, class_activity.class);
-//		mItent4 = new Intent(this, gwc_activity.class);
-//		mItent5 = new Intent(this, more_activity.class);
+		mItent1 = new Intent(this, HomeActivity.class);
+		mItent2 = new Intent(this, GoodsListActivity.class);
+    	mItent3 = new Intent(this, GoodsListActivity.class);
+		mItent4 = new Intent(this, GwcListActivity.class);
+	//	mItent5 = new Intent(this, more_activity.class);
 	}
 
 	
