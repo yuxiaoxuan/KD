@@ -68,7 +68,7 @@ public class LoginActivity extends Activity {
 						Toast.makeText(getApplicationContext(), "µ«»Î≥…π¶", 1).show();
 						Intent intent = new Intent();
 						intent.setClass(LoginActivity.this,
-								MainMenuActivity.class);
+								MainActivity.class);
 						startActivity(intent);
 						
 					}else{

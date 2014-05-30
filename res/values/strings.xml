@@ -3,5 +3,12 @@
 
     <string name="hello">Hello World, ShopsActivity!</string>
     <string name="app_name">Shops</string>
-
+  <string name="home_s">主页</string>
+    <string name="class_s">分类</string>
+    <string name="new_s">新品</string>
+   
+    <string name="more_s">更多 </string>
+    <string name="gwc_s">购物车</string>
+    
+    
 </resources>
