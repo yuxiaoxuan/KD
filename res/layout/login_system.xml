@@ -1,115 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" 
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/login"
-	>
-	
-	<TableLayout 
-	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent" 
-	android:stretchColumns="1">
-	
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			
-	
-		<TableRow>
-			<TextView 
-			android:text="          用户名：" 
-			android:id="@+id/TextView"
-			android:layout_width="70dp" 
-			android:layout_height="wrap_content"
-			android:textColor="#0000ff" 
-			/>
-			
-			<EditText 
-			android:text="" 
-			android:id="@+id/userEditText"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" 
-			/>
-		</TableRow>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_login"
+    android:orientation="vertical" >
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.3"
+        android:src="@drawable/logo1" />
 
-		<TableRow>
-			<TextView 
-			android:text="          密码：" 
-			android:id="@+id/TextView"
-			android:layout_width="70dp" 
-			android:layout_height="wrap_content"
-			android:textColor="#0000ff"
-			/>
-			
-			<EditText 
-			android:text="" 
-			android:id="@+id/pwdEditText"
-			android:layout_width="fill_parent" 
-			android:layout_height="wrap_content" 
-			android:password="true"/>
-			
-		</TableRow>
-		
-		<TableRow 
-			android:gravity="right">
-				<Button 
-				android:text="登入" 
-				android:id="@+id/loginButton"
-				android:layout_height="wrap_content" 
-				android:layout_width="160dp"/>
-	
-			<Button 
-				android:text="重置" 
-				android:id="@+id/cancelButton"
-				android:layout_width="wrap_content" 
-				android:layout_height="wrap_content"/>
-		
-		</TableRow>
-		
-		    <TableRow 
-			android:gravity="right">
-				<Button 
-				android:text="注册" 
-				android:id="@+id/registerButton"
-				android:layout_height="wrap_content" 
-				android:layout_width="wrap_content"/>
-	
-			<Button 
-				android:text="退出" 
-				android:id="@+id/exitButton"
-				android:layout_width="wrap_content" 
-				android:layout_height="wrap_content"/>
-		
-		</TableRow>
+    <RelativeLayout
+        android:id="@+id/login_div"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_margin="15dip"
+        android:layout_weight="0.7"
+        android:background="@drawable/bg_login_div"
+        android:padding="15dip" >
 
-	</TableLayout>
+        <TextView
+            android:id="@+id/login_user_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:text="登入"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:id="@+id/username_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_user_input"
+            android:hint="请输入账户"
+            android:inputType="text"
+            android:singleLine="true" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/login_password_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_edit"
+            android:layout_marginTop="3dp"
+            android:text="密码"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:id="@+id/password_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_password_input"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:password="true"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/signin_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/password_edit"
+            android:layout_below="@id/password_edit"
+            android:text="登  入" />
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/password_edit"
+            android:layout_below="@+id/password_edit"
+            android:text="还没有账号？"
+            android:textColor="#888"
+            android:textColorLink="#FF0066CC" />
+
+        <TextView
+            android:id="@+id/register_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_text"
+            android:layout_below="@id/password_edit"
+            android:layout_toRightOf="@id/tv_text"
+            android:text="注册"
+            android:textColor="#ff0000ff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </RelativeLayout>
+
 </LinearLayout>
