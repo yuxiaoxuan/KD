@@ -8,8 +8,19 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dip"
+        android:layout_margin="12dip"
         android:layout_weight="0.3"
         android:src="@drawable/logo1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.05"
+        android:text="大学校园闲置物品交易平台" 
+        android:textColor="#ff990066"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        />
 
     <RelativeLayout
         android:id="@+id/login_div"
@@ -26,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="5dp"
-            android:text="登入"
+            android:text="账号"
             android:textColor="#ff000000" />
 
         <EditText
@@ -60,14 +71,6 @@
             android:password="true"
             android:singleLine="true" />
 
-        <Button
-            android:id="@+id/signin_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@id/password_edit"
-            android:layout_below="@id/password_edit"
-            android:text="登  入" />
-
         <TextView
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"
@@ -88,6 +91,15 @@
             android:text="注册"
             android:textColor="#ff0000ff"
             android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/signin_button"
+            android:layout_width="120dip"
+            android:layout_height="50dip"
+            android:layout_alignRight="@+id/password_edit"
+            android:layout_below="@+id/register_link"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/home_user_login_bn_style" />
     </RelativeLayout>
 
     <RelativeLayout

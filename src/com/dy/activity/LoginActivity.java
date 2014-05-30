@@ -18,15 +18,14 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	// 声明登录、取消按钮
-	private Button cancelBtn,loginBtn,exitBtn;
+	private Button loginBtn;
 	private TextView registerBtn;
 	// 声明用户名、密码输入框
 	private EditText userEditText,pwdEditText;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// 设置标题
-		//setTitle("无线购物系统-登入");
+		
 		// 设置当前Activity界面布局
 		setContentView(R.layout.login_system);
 		// 通过findViewById方法实例化组件
