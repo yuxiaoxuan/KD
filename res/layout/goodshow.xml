@@ -7,10 +7,10 @@
      
         layout="@layout/top_title" />
   <GridView 
-        android:id="@+id/gridview"
+        android:id="@+id/lv_goods"
         android:gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:numColumns="2"
         android:verticalSpacing="5dip"
         android:horizontalSpacing="5dip">

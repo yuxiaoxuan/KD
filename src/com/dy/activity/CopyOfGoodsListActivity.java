@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.dy.app.Declare;
-import com.dy.util.CopyOfImageSimpleAdapter;
 import com.dy.util.HttpUtil;
 import com.dy.util.ImageService;
 import com.dy.util.ImageSimpleAdapter;
@@ -25,18 +24,19 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class GoodsListActivity extends Activity {
-	private CopyOfImageSimpleAdapter adapter;
-	private GridView lv;
+public class CopyOfGoodsListActivity extends Activity {
+
+	private ImageSimpleAdapter adapter;
+	private ListView lv;
 	private EditText et;
 	private String question;
 	private List<Map<String, Object>> list;
-	private	List<Integer> listItemID = new ArrayList<Integer>();
+	private List<Integer> listItemID = new ArrayList<Integer>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.goodshow);
+		setContentView(R.layout.goodslist);
 		Declare declare = (Declare) getApplicationContext();
 		String username = declare.getUserName();
 		if (username == null) {
@@ -48,10 +48,23 @@ public class GoodsListActivity extends Activity {
 		setViews();
 	}
 
+	
+	
+	
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		
+	}
+
+
+
+
 	private void setViews() {
-		lv = (GridView) findViewById(R.id.lv_goods);
+		lv = (ListView) findViewById(R.id.h_list_view);
 		list = getDatas();
-		adapter = new CopyOfImageSimpleAdapter(this, list, R.layout.item,
+		adapter = new ImageSimpleAdapter(this, list, R.layout.message_list,
 				new String[] { "icon", "name", "price", "count" }, new int[] {
 						R.id.ml_icon, R.id.listName, R.id.listPrice,
 						R.id.listCount });
@@ -91,7 +104,7 @@ public class GoodsListActivity extends Activity {
 			}
 		} catch (Exception e) {
 
-			Toast.makeText(getApplicationContext(), "更新列表成功", 1).show();
+			Toast.makeText(getApplicationContext(), "", 1).show();
 		}
 		return list;
 	}
@@ -120,7 +133,7 @@ public class GoodsListActivity extends Activity {
 
 			if (listItemID.size() == 0) {
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(
-						GoodsListActivity.this);
+						CopyOfGoodsListActivity.this);
 				builder1.setMessage("没有选中任何记录");
 				builder1.show();
 			} else {
@@ -149,13 +162,13 @@ public class GoodsListActivity extends Activity {
 					}
 				}
 				Intent intent = new Intent();
-				intent.setClass(GoodsListActivity.this, GwcListActivity.class);
+				intent.setClass(CopyOfGoodsListActivity.this, GwcListActivity.class);
 				startActivity(intent);
 			}
 
 		} else if (item.getItemId() == 2) {
 			Intent intent = new Intent();
-			intent.setClass(GoodsListActivity.this, LoginActivity.class);
+			intent.setClass(CopyOfGoodsListActivity.this, LoginActivity.class);
 			startActivity(intent);
 		}
 		return true;

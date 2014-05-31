@@ -19,7 +19,7 @@ public class HomeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		this.setContentView(R.layout.home_layout);
+		this.setContentView(R.layout.goodshow);
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(myAdapter(texts, images));
 	}
@@ -44,7 +44,7 @@ public class HomeActivity extends Activity {
 		}
 		SimpleAdapter simperAdapter = new SimpleAdapter(this, data,
 				R.layout.item, new String[] { "itemImage", "itemText" },
-				new int[] { R.id.imageview, R.id.textview01 });
+				new int[] { R.id.ml_icon, R.id.textview01 });
 		return simperAdapter;
 
 	}

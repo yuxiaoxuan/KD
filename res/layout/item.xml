@@ -10,53 +10,75 @@
         android:layout_gravity="center" >
 
         <ImageView
-            android:id="@+id/imageview"
+            android:id="@+id/ml_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:src="@drawable/gwc_02" />
-
-        <TextView
+            <TextView
             android:id="@+id/textview01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/imageview"
-            android:layout_below="@id/imageview"
-            android:text="RMB 86.0"
-            android:textColor="#ff990000"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dip"
+            android:layout_below="@id/ml_icon"
+            android:text="RMB"
+            android:textColor="#ff995500"
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/textview02"
+            android:id="@+id/listPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/textview01"
-            android:layout_marginLeft="5dip"
-            android:layout_toRightOf="@id/textview01"
-            android:text="运费：6元"
-            android:textSize="7sp" />
-
-        <TextView
+            android:layout_alignBaseline="@+id/textview01"
+            android:layout_alignBottom="@+id/textview01"
+            android:layout_toRightOf="@+id/textview01"
+            android:text="86.0"
+            android:textColor="#ff990000"
+            android:textSize="17sp" />
+         <TextView
             android:id="@+id/textview03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/textview01"
             android:layout_alignBottom="@id/textview01"
-            android:layout_alignRight="@id/imageview"
-            android:text="进入店铺"
+            android:layout_alignRight="@id/ml_icon"
+            android:text="件"
             android:textSize="7sp" />
 
         <TextView
-            android:id="@+id/textview04"
+            android:id="@+id/listName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/imageview"
-            android:layout_alignRight="@id/imageview"
+            android:layout_alignLeft="@id/ml_icon"
+            android:layout_alignRight="@id/ml_icon"
             android:layout_below="@id/textview01"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dip"
             android:text="面料很好，款式很好看，是一件不错的T恤哦！球片也很闪亮！大爱，以后还要来买传着很修身啊码数也正"
             android:textSize="7sp" />
+
+        <TextView
+            android:id="@+id/listCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textview01"
+            android:layout_toLeftOf="@+id/textview03"
+            android:text="10"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textview02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textview03"
+            android:layout_alignBottom="@+id/textview03"
+            android:layout_toLeftOf="@+id/listCount"
+            android:text="库存："
+            android:textSize="7sp" />
+
+    
+
     </RelativeLayout>
 
 </LinearLayout>

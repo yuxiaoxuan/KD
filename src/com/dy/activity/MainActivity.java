@@ -68,17 +68,17 @@ public class MainActivity extends TabActivity implements OnClickListener{
 				R.drawable.class_h, mItent3));
 		mTabHost.addTab(buildTabSpec(TAB_TAG_ACCOUNT,R.string.gwc_s, 
 				R.drawable.gwc_h, mItent4));
-//		mTabHost.addTab(buildTabSpec(TAB_TAB_MORE, R.string.more_s,
-//				R.drawable.more_h, mItent5));
+		mTabHost.addTab(buildTabSpec(TAB_TAB_MORE, R.string.more_s,
+			R.drawable.more_h, mItent5));
 	}
 
 	private void prepareIntent() {
 		// TODO Auto-generated method stub
-		mItent1 = new Intent(this, HomeActivity.class);
+		mItent1 = new Intent(this, GoodsListActivity.class);
 		mItent2 = new Intent(this, GoodsListActivity.class);
-    	mItent3 = new Intent(this, GoodsListActivity.class);
+    	mItent3 = new Intent(this, CopyOfGoodsListActivity.class);
 		mItent4 = new Intent(this, GwcListActivity.class);
-	//	mItent5 = new Intent(this, more_activity.class);
+		mItent5 = new Intent(this, DdListActivity.class);
 	}
 
 	

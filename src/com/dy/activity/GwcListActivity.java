@@ -161,7 +161,7 @@ public class GwcListActivity extends Activity {
 				// 取得自定义View
 				final String[] input_num = new String[] { "1", "2", "3", "4",
 						"5" };
-				
+
 				LayoutInflater layoutInflater = LayoutInflater
 						.from(GwcListActivity.this);
 				View inputNumView = layoutInflater.inflate(R.layout.input_num,
@@ -177,7 +177,7 @@ public class GwcListActivity extends Activity {
 									@Override
 									public void onClick(DialogInterface dialog,
 											int which) {
-										selectedIndex = which; 
+										selectedIndex = which;
 									}
 								})
 						// .setPositiveButton("确定", myListener3)
@@ -190,7 +190,9 @@ public class GwcListActivity extends Activity {
 										String count = input_num[selectedIndex];
 										int intCount = Integer.parseInt(count);
 										if (intCount > goodsCount) {
-											Toast.makeText(getApplicationContext(), "库存不足", 1).show();
+											Toast.makeText(
+													getApplicationContext(),
+													"库存不足", 1).show();
 										} else {
 											try {
 												Declare declare = (Declare) getApplicationContext();
@@ -200,10 +202,14 @@ public class GwcListActivity extends Activity {
 														+ myid
 														+ "&name="
 														+ URLEncoder.encode(
-																URLEncoder.encode(goodsName, "UTF-8"),
-																"UTF-8") + "&count=" + count;
+																URLEncoder
+																		.encode(goodsName,
+																				"UTF-8"),
+																"UTF-8")
+														+ "&count=" + count;
 												// 查询返回结果
-												String result = HttpUtil.queryStringForPost(url);
+												String result = HttpUtil
+														.queryStringForPost(url);
 												if (!result.equals("0")) {
 													setViews();
 												}
