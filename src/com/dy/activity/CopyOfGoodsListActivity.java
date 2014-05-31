@@ -39,11 +39,11 @@ public class CopyOfGoodsListActivity extends Activity {
 		setContentView(R.layout.goodslist);
 		Declare declare = (Declare) getApplicationContext();
 		String username = declare.getUserName();
-		if (username == null) {
-			setTitle("当前位置---商品列表");
-		} else {
-			setTitle("您好：" + username + "   当前位置---商品列表");
-		}
+//		if (username == null) {
+//			setTitle("当前位置---商品列表");
+//		} else {
+//			setTitle("您好：" + username + "   当前位置---商品列表");
+//		}
 
 		setViews();
 	}
