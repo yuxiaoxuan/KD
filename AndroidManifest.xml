@@ -7,10 +7,10 @@
     <uses-sdk android:minSdkVersion="7" />
 
     <application
-        android:name="com.dy.app.Declare"
+        android:name="com.dy.beans.Declare"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name" >

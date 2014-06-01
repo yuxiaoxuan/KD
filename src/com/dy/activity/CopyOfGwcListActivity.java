@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.AlertDialog.Builder;
-import com.dy.app.Declare;
+
+import com.dy.beans.Declare;
 import com.dy.util.GwcSimpleAdapter;
 import com.dy.util.HttpUtil;
+
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;

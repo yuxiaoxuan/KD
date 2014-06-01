@@ -1,4 +1,4 @@
-package com.dy.app;
+package com.dy.beans;
 
 import android.app.Application;
 

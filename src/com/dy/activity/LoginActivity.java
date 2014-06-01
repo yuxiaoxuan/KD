@@ -2,7 +2,7 @@ package com.dy.activity;
 
 import java.net.URLEncoder;
 
-import com.dy.app.Declare;
+import com.dy.beans.Declare;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;

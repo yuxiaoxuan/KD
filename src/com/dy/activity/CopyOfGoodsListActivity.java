@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.dy.app.Declare;
+import com.dy.beans.Declare;
 import com.dy.util.HttpUtil;
 import com.dy.util.ImageService;
 import com.dy.util.ImageSimpleAdapter;

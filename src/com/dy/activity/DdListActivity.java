@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.dy.app.Declare;
+
+import com.dy.beans.Declare;
 import com.dy.util.DdSimpleAdapter;
 import com.dy.util.HttpUtil;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

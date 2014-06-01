@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.dy.app.Declare;
+import com.dy.beans.Declare;
 import com.dy.util.CopyOfImageSimpleAdapter;
 import com.dy.util.HttpUtil;
 import com.dy.util.ImageService;
@@ -52,9 +52,9 @@ public class GoodsListActivity extends Activity {
 		lv = (GridView) findViewById(R.id.lv_goods);
 		list = getDatas();
 		adapter = new CopyOfImageSimpleAdapter(this, list, R.layout.item,
-				new String[] { "icon", "name", "price", "count" }, new int[] {
+				new String[] { "icon", "name", "price", "count" ,"text"}, new int[] {
 						R.id.ml_icon, R.id.listName, R.id.listPrice,
-						R.id.listCount });
+						R.id.listCount ,R.id.listtext});
 		lv.setAdapter(adapter);
 	}
 
@@ -85,6 +85,7 @@ public class GoodsListActivity extends Activity {
 					map.put("name", photos[0]);
 					map.put("price", photos[2]);
 					map.put("count", photos[3]);
+					map.put("text", photos[4]);
 
 					list.add(map);
 				}

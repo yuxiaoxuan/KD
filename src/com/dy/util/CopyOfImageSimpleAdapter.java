@@ -58,6 +58,7 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
 			holder.name = (TextView)view.findViewById(R.id.listName);
 			holder.price = (TextView)view.findViewById(R.id.listPrice);
 			holder.count = (TextView)view.findViewById(R.id.listCount);
+			holder.text= (TextView) view.findViewById(R.id.listtext);
 			holder.iv = (ImageView)view.findViewById(R.id.ml_icon);
 			final int p = position;
 			System.out.println("pppppppppppppppppp   "+p);
@@ -80,6 +81,7 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
 		holder.name.setText(mData.get(position).get("name").toString());
 		holder.price.setText(mData.get(position).get("price").toString());
 		holder.count.setText(mData.get(position).get("count").toString());
+		holder.text.setText(mData.get(position).get("text").toString());
 		holder.iv.setImageBitmap((Bitmap)mData.get(position).get("icon"));
 		index++;
 		System.out.println("indexindexindexindexindexindexindex   "+index);
@@ -92,6 +94,7 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
     	TextView name;
     	TextView price;
     	TextView count;
+    	TextView text;
     }
 
     /**  
