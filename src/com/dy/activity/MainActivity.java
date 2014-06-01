@@ -62,12 +62,12 @@ public class MainActivity extends TabActivity implements OnClickListener{
 		mTabHost = getTabHost();
 		mTabHost.addTab(buildTabSpec(TAB_TAG_HOME, R.string.home_s,
 				R.drawable.home_h, mItent1));
-		mTabHost.addTab(buildTabSpec(TAB_TAG_CHANNEL,R.string.new_s, 
-				R.drawable.new_h, mItent2));
-		mTabHost.addTab(buildTabSpec(TAB_TAG_SEARCH, R.string.class_s,
-				R.drawable.class_h, mItent3));
-		mTabHost.addTab(buildTabSpec(TAB_TAG_ACCOUNT,R.string.gwc_s, 
-				R.drawable.gwc_h, mItent4));
+		mTabHost.addTab(buildTabSpec(TAB_TAG_CHANNEL,R.string.class_s, 
+				R.drawable.class_h, mItent2));
+		mTabHost.addTab(buildTabSpec(TAB_TAG_SEARCH, R.string.gwc_s,
+				R.drawable.gwc_h, mItent3));
+		mTabHost.addTab(buildTabSpec(TAB_TAG_ACCOUNT,R.string.new_s, 
+				R.drawable.new_h, mItent4));
 		mTabHost.addTab(buildTabSpec(TAB_TAB_MORE, R.string.more_s,
 			R.drawable.more_h, mItent5));
 	}
@@ -75,10 +75,10 @@ public class MainActivity extends TabActivity implements OnClickListener{
 	private void prepareIntent() {
 		// TODO Auto-generated method stub
 		mItent1 = new Intent(this, GoodsListActivity.class);
-		mItent2 = new Intent(this, GoodsListActivity.class);
-    	mItent3 = new Intent(this, CopyOfGoodsListActivity.class);
-		mItent4 = new Intent(this, GwcListActivity.class);
-		mItent5 = new Intent(this, DdListActivity.class);
+		mItent2 = new Intent(this, CopyOfGoodsListActivity.class);
+    	mItent3 = new Intent(this, GwcListActivity.class);
+		mItent4 = new Intent(this, DdListActivity.class);
+		mItent5 = new Intent(this, DetailActivity.class);
 	}
 
 	
@@ -107,9 +107,9 @@ public class MainActivity extends TabActivity implements OnClickListener{
 			//return;
 	//	}
 		mBut1.setImageResource(R.drawable.home_p);
-		mBut2.setImageResource(R.drawable.new_p);
-		mBut3.setImageResource(R.drawable.class_p);
-		mBut4.setImageResource(R.drawable.gwc_p);
+		mBut2.setImageResource(R.drawable.class_p);
+		mBut3.setImageResource(R.drawable.gwc_p);
+		mBut4.setImageResource(R.drawable.new_p);
 		mBut5.setImageResource(R.drawable.more_p);
 		mCateText1.setTextColor(COLOR1);
 		mCateText2.setTextColor(COLOR1);
@@ -128,17 +128,17 @@ public class MainActivity extends TabActivity implements OnClickListener{
 			break;
 		case R.id.channel2:
 			mTabHost.setCurrentTabByTag(TAB_TAG_CHANNEL);
-			mBut2.setImageResource(R.drawable.new_h);
+			mBut2.setImageResource(R.drawable.class_h );
 			mCateText2.setTextColor(COLOR2);
 			break;
 		case R.id.channel3:
 			mTabHost.setCurrentTabByTag(TAB_TAG_SEARCH);
-			mBut3.setImageResource(R.drawable.class_h);
+			mBut3.setImageResource(R.drawable.gwc_h);
 			mCateText3.setTextColor(COLOR2);
 			break;
 		case R.id.channel4:
 			mTabHost.setCurrentTabByTag(TAB_TAG_ACCOUNT);
-			mBut4.setImageResource(R.drawable.gwc_h);
+			mBut4.setImageResource(R.drawable.new_h);
 			mCateText4.setTextColor(COLOR2);
 			break;
 		case R.id.channel5:

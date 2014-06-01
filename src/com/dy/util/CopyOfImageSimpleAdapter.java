@@ -52,23 +52,24 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
 			System.out.println("contextcontext  "+context);
 			LayoutInflater mInflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = mInflater.inflate(R.layout.item, null);
+			view = mInflater.inflate(R.layout.goods_item, null);
 			holder = new ViewHolder();
-			//holder.selected = (CheckBox)view.findViewById(R.id.listSelect);
+//			holder.selected = (CheckBox)view.findViewById(R.id.listSelect);
 			holder.name = (TextView)view.findViewById(R.id.listName);
 			holder.price = (TextView)view.findViewById(R.id.listPrice);
 			holder.count = (TextView)view.findViewById(R.id.listCount);
-			holder.text= (TextView) view.findViewById(R.id.listtext);
 			holder.iv = (ImageView)view.findViewById(R.id.ml_icon);
+			holder.text= (TextView) view.findViewById(R.id.listtext);
+			
 			final int p = position;
 			System.out.println("pppppppppppppppppp   "+p);
 			map.put(position, view);
 //			holder.selected.setOnClickListener(new View.OnClickListener() {
 //				
 //				public void onClick(View v) {
-////					CheckBox cb = (CheckBox)v;
-////					mChecked.set(p, cb.isChecked());
-////					System.out.println("####$$$$$$$$$$$%%%%^^^^^&&&&&********");
+//					CheckBox cb = (CheckBox)v;
+//					mChecked.set(p, cb.isChecked());
+//					System.out.println("####$$$$$$$$$$$%%%%^^^^^&&&&&********");
 //				}
 //			});
 			view.setTag(holder);
@@ -77,12 +78,13 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
 			holder = (ViewHolder)view.getTag();
 		}
 		
-	//	holder.selected.setChecked(mChecked.get(position));
+//		holder.selected.setChecked(mChecked.get(position));
 		holder.name.setText(mData.get(position).get("name").toString());
 		holder.price.setText(mData.get(position).get("price").toString());
 		holder.count.setText(mData.get(position).get("count").toString());
 		holder.text.setText(mData.get(position).get("text").toString());
 		holder.iv.setImageBitmap((Bitmap)mData.get(position).get("icon"));
+		
 		index++;
 		System.out.println("indexindexindexindexindexindexindex   "+index);
 		return view;  
@@ -90,7 +92,7 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
     
     static class ViewHolder{
     	ImageView iv;
-    	//CheckBox selected;
+//    	CheckBox selected;
     	TextView name;
     	TextView price;
     	TextView count;

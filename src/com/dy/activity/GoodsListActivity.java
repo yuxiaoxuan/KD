@@ -18,8 +18,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
@@ -39,11 +43,11 @@ public class GoodsListActivity extends Activity {
 		setContentView(R.layout.goodshow);
 		Declare declare = (Declare) getApplicationContext();
 		String username = declare.getUserName();
-		if (username == null) {
-			setTitle("当前位置---商品列表");
-		} else {
-			setTitle("您好：" + username + "   当前位置---商品列表");
-		}
+//		if (username == null) {
+//			setTitle("当前位置---商品列表");
+//		} else {
+//			setTitle("您好：" + username + "   当前位置---商品列表");
+//		}
 
 		setViews();
 	}
@@ -51,12 +55,23 @@ public class GoodsListActivity extends Activity {
 	private void setViews() {
 		lv = (GridView) findViewById(R.id.lv_goods);
 		list = getDatas();
-		adapter = new CopyOfImageSimpleAdapter(this, list, R.layout.item,
+		adapter = new CopyOfImageSimpleAdapter(this, list, R.layout.goods_item,
 				new String[] { "icon", "name", "price", "count" ,"text"}, new int[] {
 						R.id.ml_icon, R.id.listName, R.id.listPrice,
 						R.id.listCount ,R.id.listtext});
 		lv.setAdapter(adapter);
+		
+		
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();

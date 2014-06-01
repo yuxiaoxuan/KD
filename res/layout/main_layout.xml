@@ -58,14 +58,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/new_p" />
+                    android:src="@drawable/class_h" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="新品" />
+                    android:text="@string/class_s" />
             </LinearLayout>
 
             <LinearLayout
@@ -81,14 +81,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/class_p" />
+                    android:src="@drawable/gwc_h" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="订单" />
+                    android:text="@string/gwc_s" />
             </LinearLayout>
 
             <LinearLayout
@@ -104,14 +104,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/gwc_p" />
+                    android:src="@drawable/new_p" />
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="购物车" />
+                    android:text="@string/new_s" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,14 +127,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/more_p" />
+                    android:src="@drawable/more_h" />
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="更多" />
+                    android:text="@string/more_s" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
