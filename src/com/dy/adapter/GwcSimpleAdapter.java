@@ -1,4 +1,4 @@
-package com.dy.util;
+package com.dy.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class DdSimpleAdapter extends SimpleAdapter {
+public class GwcSimpleAdapter extends SimpleAdapter {
 	public List<String> mChecked;
 	private int[] mTo;
 	private String[] mFrom;
@@ -43,7 +43,7 @@ public class DdSimpleAdapter extends SimpleAdapter {
 	Context context = null;
 	int index = 0;
 
-	public DdSimpleAdapter(Context context,
+	public GwcSimpleAdapter(Context context,
 			List<? extends Map<String, ?>> data, int resource, String[] from,
 			int[] to) {
 		super(context, data, resource, from, to);
@@ -58,6 +58,13 @@ public class DdSimpleAdapter extends SimpleAdapter {
 		this.context = context;
 	}
 
+	private LayoutParams fillParentLayoutParams = new LinearLayout.LayoutParams(
+
+	LinearLayout.LayoutParams.FILL_PARENT,
+			LinearLayout.LayoutParams.FILL_PARENT);
+
+	private int index2 = -1;
+
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final int p = position;
 
@@ -68,9 +75,11 @@ public class DdSimpleAdapter extends SimpleAdapter {
 			System.out.println("contextcontext  " + context);
 			LayoutInflater mInflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = mInflater.inflate(R.layout.ddmessage_list, null);
-			holder.ddid = (TextView) view.findViewById(R.id.ddid);
-			holder.ddtime = (TextView) view.findViewById(R.id.ddtime);
+			view = mInflater.inflate(R.layout.gwcmessage_list, null);
+			holder.name = (TextView) view.findViewById(R.id.gwcName);
+			holder.price = (TextView) view.findViewById(R.id.gwcPrice);
+			holder.count = (TextView) view.findViewById(R.id.count);
+			holder.gwccount = (TextView) view.findViewById(R.id.gwcCount);
 			System.out.println("pppppppppppppppppp   " + p);
 			map.put(position, view);
 			view.setTag(holder);
@@ -80,16 +89,20 @@ public class DdSimpleAdapter extends SimpleAdapter {
 		}
 
 		// holder.button.
-		holder.ddid.setText(mData.get(position).get("ddid").toString());
-		holder.ddtime.setText(mData.get(position).get("ddtime").toString());
+		holder.name.setText(mData.get(position).get("name").toString());
+		holder.price.setText(mData.get(position).get("price").toString());
+		holder.count.setText(mData.get(position).get("count").toString());
+		holder.gwccount.setText(mData.get(position).get("gwccount").toString());
 		index++;
 		System.out.println("indexindexindexindexindexindexindex   " + index);
 		return view;
 	}
 
 	static class GwcViewHolder {
-		TextView ddid;
-		TextView ddtime;
+		TextView name;
+		TextView price;
+		TextView count;
+		TextView gwccount;
 	}
 
 	/**

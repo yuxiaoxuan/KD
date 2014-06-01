@@ -6,6 +6,11 @@ import android.widget.Toast;
 
 public class PublicTools {
 	
+	/**
+	 * 
+	 * µ¯Toast
+	 * 
+	 * */
 	
 	public  void ShowToast(Context context,String string) {
 		// TODO Auto-generated method stub

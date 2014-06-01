@@ -5,6 +5,8 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -152,5 +154,30 @@ public class MainActivity extends TabActivity implements OnClickListener{
 
 		
 	}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		menu.add(0, 1, 1, "重新登入");
+		menu.add(0, 2, 2, "退出");
+	
+		return super.onCreateOptionsMenu(menu);
 
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		if (item.getItemId() == 1) {//重新登入
+			
+			Intent intent = new Intent();
+			intent.setClass(MainActivity.this,
+					LoginActivity.class);
+			startActivity(intent);
+		} else if (item.getItemId() == 2) {//退出
+			System.exit(0);  
+		} 
+		return true;
+
+	}
 }
+

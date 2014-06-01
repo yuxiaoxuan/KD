@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.dy.adapter.DdSimpleAdapter;
 import com.dy.beans.Declare;
-import com.dy.util.DdSimpleAdapter;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;

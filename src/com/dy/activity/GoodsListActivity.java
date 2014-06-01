@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.dy.adapter.CopyOfImageSimpleAdapter;
+import com.dy.adapter.ImageSimpleAdapter;
 import com.dy.beans.Declare;
-import com.dy.util.CopyOfImageSimpleAdapter;
 import com.dy.util.HttpUtil;
 import com.dy.util.ImageService;
-import com.dy.util.ImageSimpleAdapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -36,7 +36,7 @@ public class GoodsListActivity extends Activity {
 	private EditText et;
 	private String question;
 	private List<Map<String, Object>> list;
-	private	List<Integer> listItemID = new ArrayList<Integer>();
+	private List<Integer> listItemID = new ArrayList<Integer>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -44,11 +44,11 @@ public class GoodsListActivity extends Activity {
 		setContentView(R.layout.goodshow);
 		Declare declare = (Declare) getApplicationContext();
 		String username = declare.getUserName();
-//		if (username == null) {
-//			setTitle("当前位置---商品列表");
-//		} else {
-//			setTitle("您好：" + username + "   当前位置---商品列表");
-//		}
+		// if (username == null) {
+		// setTitle("当前位置---商品列表");
+		// } else {
+		// setTitle("您好：" + username + "   当前位置---商品列表");
+		// }
 
 		setViews();
 	}
@@ -57,50 +57,47 @@ public class GoodsListActivity extends Activity {
 		lv = (GridView) findViewById(R.id.lv_goods);
 		list = getDatas();
 		adapter = new CopyOfImageSimpleAdapter(this, list, R.layout.goods_item,
-				new String[] { "icon", "name", "price", "count" ,"text"}, new int[] {
-						R.id.ml_icon, R.id.listName, R.id.listPrice,
-						R.id.listCount ,R.id.listtext});
+				new String[] { "icon", "name", "price", "count", "text" },
+				new int[] { R.id.ml_icon, R.id.listName, R.id.listPrice,
+						R.id.listCount, R.id.listtext });
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> parent, View arg1,
-					int arg2, long arg3) {
+			public void onItemClick(AdapterView<?> parent, View arg1, int arg2,
+					long arg3) {
 				// TODO Auto-generated method stub
-				
-			Log.i("===========================>>>>"	,list.get(arg2).get("name").toString());
-			Log.i("===========================>>>>"	,list.get(arg2).get("price").toString());
-			Log.i("===========================>>>>"	,list.get(arg2).get("count").toString());
-			Log.i("===========================>>>>"	,list.get(arg2).get("text").toString());
-			
-			Intent i=new Intent(GoodsListActivity.this,DetailActivity.class);
-			
-			Bitmap bit=(Bitmap) list.get(arg2).get("icon");
-			Bundle bundle=new Bundle();
-//			bundle.putParcelable("icon", bit);
-			bundle.putString("name", list.get(arg2).get("name").toString());
-			bundle.putString("price", list.get(arg2).get("price").toString());
-			bundle.putString("count", list.get(arg2).get("count").toString());
-			bundle.putString("text", list.get(arg2).get("text").toString());
-				
+
+				Log.i("===========================>>>>",
+						list.get(arg2).get("name").toString());
+				Log.i("===========================>>>>",
+						list.get(arg2).get("price").toString());
+				Log.i("===========================>>>>",
+						list.get(arg2).get("count").toString());
+				Log.i("===========================>>>>",
+						list.get(arg2).get("text").toString());
+
+				Intent i = new Intent(GoodsListActivity.this,
+						DetailActivity.class);
+
+				Bitmap bit = (Bitmap) list.get(arg2).get("icon");
+				Bundle bundle = new Bundle();
+				bundle.putParcelable("icon", bit);
+				bundle.putString("name", list.get(arg2).get("name").toString());
+				bundle.putString("price", list.get(arg2).get("price")
+						.toString());
+				bundle.putString("count", list.get(arg2).get("count")
+						.toString());
+				bundle.putString("text", list.get(arg2).get("text").toString());
+
 				i.putExtras(bundle);
 				startActivity(i);
-//				finish();
-				
-				
+				// finish();
+
 			}
 		});
-		
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();

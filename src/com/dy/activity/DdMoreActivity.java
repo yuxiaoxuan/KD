@@ -9,8 +9,8 @@ import java.util.Map;
 
 import android.app.AlertDialog;
 
+import com.dy.adapter.DdMoreSimpleAdapter;
 import com.dy.beans.Declare;
-import com.dy.util.DdMoreSimpleAdapter;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;

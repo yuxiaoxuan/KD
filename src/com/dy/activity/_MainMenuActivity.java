@@ -13,12 +13,12 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class MainMenuActivity extends Activity {
+public class _MainMenuActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("无线购物系统-主页面");
-        setContentView(R.layout.main_menu);
+        setContentView(R.layout._main_menu);
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
     }
@@ -90,7 +90,7 @@ public class MainMenuActivity extends Activity {
 		public void onClick(View v) {
 			Intent intent = new Intent();
 			// 启动结算Activity
-			intent.setClass(MainMenuActivity.this, GoodsListActivity.class);
+			intent.setClass(_MainMenuActivity.this, GoodsListActivity.class);
 			startActivity(intent);
 		}
 	};
@@ -99,7 +99,7 @@ public class MainMenuActivity extends Activity {
 		public void onClick(View v) {
 			Intent intent = new Intent();
 			// 启动结算Activity
-			intent.setClass(MainMenuActivity.this, GwcListActivity.class);
+			intent.setClass(_MainMenuActivity.this, GwcListActivity.class);
 			startActivity(intent);
 		}
 	};
@@ -108,7 +108,7 @@ public class MainMenuActivity extends Activity {
 		public void onClick(View v) {
 			Intent intent = new Intent();
 			// 启动结算Activity
-			intent.setClass(MainMenuActivity.this, DdListActivity.class);
+			intent.setClass(_MainMenuActivity.this, DdListActivity.class);
 			startActivity(intent);
 		}
 	};
@@ -130,7 +130,7 @@ public class MainMenuActivity extends Activity {
 		if (item.getItemId() == 1) {//重新登入
 			
 			Intent intent = new Intent();
-			intent.setClass(MainMenuActivity.this,
+			intent.setClass(_MainMenuActivity.this,
 					LoginActivity.class);
 			startActivity(intent);
 		} else if (item.getItemId() == 2) {//退出

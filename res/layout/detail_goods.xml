@@ -31,11 +31,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" >
 
-                <com.dy.util.BrandGallery
-                    android:id="@+id/commodity_detail_gallery"
+                <ImageView
+                    android:id="@+id/lstp"
                     android:layout_width="fill_parent"
-                    android:layout_height="210dip"
-                    android:spacing="60dip" />
+                    android:layout_height="200dip"
+                    android:src="@drawable/logo1" >
+                </ImageView>
 
                 <ImageView
                     android:id="@+id/commodity_detail_left_Img"
@@ -194,7 +195,7 @@
                         android:gravity="left"
                         android:lines="10"
                         android:textColor="#3c7dd0"
-                        android:textSize="12sp" />
+                        android:textSize="17sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

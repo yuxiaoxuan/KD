@@ -1,4 +1,4 @@
-package com.dy.util;
+package com.dy.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class GwcSimpleAdapter extends SimpleAdapter {
+public class DdMoreSimpleAdapter extends SimpleAdapter {
 	public List<String> mChecked;
 	private int[] mTo;
 	private String[] mFrom;
@@ -43,7 +43,7 @@ public class GwcSimpleAdapter extends SimpleAdapter {
 	Context context = null;
 	int index = 0;
 
-	public GwcSimpleAdapter(Context context,
+	public DdMoreSimpleAdapter(Context context,
 			List<? extends Map<String, ?>> data, int resource, String[] from,
 			int[] to) {
 		super(context, data, resource, from, to);
@@ -58,13 +58,6 @@ public class GwcSimpleAdapter extends SimpleAdapter {
 		this.context = context;
 	}
 
-	private LayoutParams fillParentLayoutParams = new LinearLayout.LayoutParams(
-
-	LinearLayout.LayoutParams.FILL_PARENT,
-			LinearLayout.LayoutParams.FILL_PARENT);
-
-	private int index2 = -1;
-
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final int p = position;
 
@@ -75,11 +68,9 @@ public class GwcSimpleAdapter extends SimpleAdapter {
 			System.out.println("contextcontext  " + context);
 			LayoutInflater mInflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = mInflater.inflate(R.layout.gwcmessage_list, null);
-			holder.name = (TextView) view.findViewById(R.id.gwcName);
-			holder.price = (TextView) view.findViewById(R.id.gwcPrice);
-			holder.count = (TextView) view.findViewById(R.id.count);
-			holder.gwccount = (TextView) view.findViewById(R.id.gwcCount);
+			view = mInflater.inflate(R.layout.ddmoremessage_list, null);
+			holder.gname = (TextView) view.findViewById(R.id.ddgName);
+			holder.gcount = (TextView) view.findViewById(R.id.ddgCount);
 			System.out.println("pppppppppppppppppp   " + p);
 			map.put(position, view);
 			view.setTag(holder);
@@ -89,20 +80,16 @@ public class GwcSimpleAdapter extends SimpleAdapter {
 		}
 
 		// holder.button.
-		holder.name.setText(mData.get(position).get("name").toString());
-		holder.price.setText(mData.get(position).get("price").toString());
-		holder.count.setText(mData.get(position).get("count").toString());
-		holder.gwccount.setText(mData.get(position).get("gwccount").toString());
+		holder.gname.setText(mData.get(position).get("gname").toString());
+		holder.gcount.setText(mData.get(position).get("gcount").toString());
 		index++;
 		System.out.println("indexindexindexindexindexindexindex   " + index);
 		return view;
 	}
 
 	static class GwcViewHolder {
-		TextView name;
-		TextView price;
-		TextView count;
-		TextView gwccount;
+		TextView gname;
+		TextView gcount;
 	}
 
 	/**

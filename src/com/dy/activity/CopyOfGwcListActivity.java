@@ -10,8 +10,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.AlertDialog.Builder;
 
+import com.dy.adapter.GwcSimpleAdapter;
 import com.dy.beans.Declare;
-import com.dy.util.GwcSimpleAdapter;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;

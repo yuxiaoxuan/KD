@@ -1,4 +1,4 @@
-package com.dy.util;
+package com.dy.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class DdMoreSimpleAdapter extends SimpleAdapter {
+public class DdSimpleAdapter extends SimpleAdapter {
 	public List<String> mChecked;
 	private int[] mTo;
 	private String[] mFrom;
@@ -43,7 +43,7 @@ public class DdMoreSimpleAdapter extends SimpleAdapter {
 	Context context = null;
 	int index = 0;
 
-	public DdMoreSimpleAdapter(Context context,
+	public DdSimpleAdapter(Context context,
 			List<? extends Map<String, ?>> data, int resource, String[] from,
 			int[] to) {
 		super(context, data, resource, from, to);
@@ -68,9 +68,9 @@ public class DdMoreSimpleAdapter extends SimpleAdapter {
 			System.out.println("contextcontext  " + context);
 			LayoutInflater mInflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = mInflater.inflate(R.layout.ddmoremessage_list, null);
-			holder.gname = (TextView) view.findViewById(R.id.ddgName);
-			holder.gcount = (TextView) view.findViewById(R.id.ddgCount);
+			view = mInflater.inflate(R.layout.ddmessage_list, null);
+			holder.ddid = (TextView) view.findViewById(R.id.ddid);
+			holder.ddtime = (TextView) view.findViewById(R.id.ddtime);
 			System.out.println("pppppppppppppppppp   " + p);
 			map.put(position, view);
 			view.setTag(holder);
@@ -80,16 +80,16 @@ public class DdMoreSimpleAdapter extends SimpleAdapter {
 		}
 
 		// holder.button.
-		holder.gname.setText(mData.get(position).get("gname").toString());
-		holder.gcount.setText(mData.get(position).get("gcount").toString());
+		holder.ddid.setText(mData.get(position).get("ddid").toString());
+		holder.ddtime.setText(mData.get(position).get("ddtime").toString());
 		index++;
 		System.out.println("indexindexindexindexindexindexindex   " + index);
 		return view;
 	}
 
 	static class GwcViewHolder {
-		TextView gname;
-		TextView gcount;
+		TextView ddid;
+		TextView ddtime;
 	}
 
 	/**
