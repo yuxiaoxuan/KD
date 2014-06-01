@@ -18,6 +18,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,7 +61,35 @@ public class GoodsListActivity extends Activity {
 						R.id.ml_icon, R.id.listName, R.id.listPrice,
 						R.id.listCount ,R.id.listtext});
 		lv.setAdapter(adapter);
-		
+		lv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View arg1,
+					int arg2, long arg3) {
+				// TODO Auto-generated method stub
+				
+			Log.i("===========================>>>>"	,list.get(arg2).get("name").toString());
+			Log.i("===========================>>>>"	,list.get(arg2).get("price").toString());
+			Log.i("===========================>>>>"	,list.get(arg2).get("count").toString());
+			Log.i("===========================>>>>"	,list.get(arg2).get("text").toString());
+			
+			Intent i=new Intent(GoodsListActivity.this,DetailActivity.class);
+			
+			Bitmap bit=(Bitmap) list.get(arg2).get("icon");
+			Bundle bundle=new Bundle();
+//			bundle.putParcelable("icon", bit);
+			bundle.putString("name", list.get(arg2).get("name").toString());
+			bundle.putString("price", list.get(arg2).get("price").toString());
+			bundle.putString("count", list.get(arg2).get("count").toString());
+			bundle.putString("text", list.get(arg2).get("text").toString());
+				
+				i.putExtras(bundle);
+				startActivity(i);
+//				finish();
+				
+				
+			}
+		});
 		
 		
 	}
