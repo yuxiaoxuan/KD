@@ -2,7 +2,7 @@ package com.dy.activity;
 
 import java.net.URLEncoder;
 
-import com.dy.beans.Declare;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;
@@ -58,7 +58,7 @@ public class DingdanActivity extends Activity {
 
 		// 设置默认值
 		spinner1.setVisibility(View.VISIBLE);
-		Declare declare = (Declare) getApplicationContext();
+		User declare = (User) getApplicationContext();
 		String username = declare.getUserName();
 		if (username == null) {
 			setTitle("当前位置---订单录入");
@@ -86,7 +86,7 @@ public class DingdanActivity extends Activity {
 			String phone = text1.getText().toString();
 			String address = text2.getText().toString();
 			String type = value1;
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			try {
 				String url = HttpUtil.BASE_URL

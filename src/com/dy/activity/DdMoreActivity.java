@@ -10,7 +10,7 @@ import java.util.Map;
 import android.app.AlertDialog;
 
 import com.dy.adapter.DdMoreSimpleAdapter;
-import com.dy.beans.Declare;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;
@@ -51,7 +51,7 @@ public class DdMoreActivity extends Activity {
 		Bundle extras = this.getIntent().getExtras();
 		ddid = extras.getString("ddid");
 
-		Declare declare = (Declare) getApplicationContext();
+		User declare = (User) getApplicationContext();
 		String username = declare.getUserName();
 		if (username == null) {
 			setTitle("当前位置---订单详情");
@@ -66,7 +66,7 @@ public class DdMoreActivity extends Activity {
 	private void setTvValue() {
 		try {
 			 
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			System.out.println("myid          =" + myid);
 			String url = HttpUtil.BASE_URL + "DdMoreServlet?myid=" + myid
@@ -102,7 +102,7 @@ public class DdMoreActivity extends Activity {
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			System.out.println("myid          =" + myid);
 			String url = HttpUtil.BASE_URL + "DdMoreListServlet?myid=" + myid
@@ -144,7 +144,7 @@ public class DdMoreActivity extends Activity {
 		if (item.getItemId() == 1) {// 确认提交
 
 			Intent intent = new Intent();
-			intent.setClass(DdMoreActivity.this, GoodsListActivity.class);
+			intent.setClass(DdMoreActivity.this, GoodsGirdActivity.class);
 			startActivity(intent);
 			listItemID.clear();
 			if (listItemID.size() == 0) {
@@ -167,7 +167,7 @@ public class DdMoreActivity extends Activity {
 				}
 
 				try {
-					Declare declare = (Declare) getApplicationContext();
+					User declare = (User) getApplicationContext();
 					int myid = declare.getId();
 					String url = HttpUtil.BASE_URL
 							+ "AddGoodsServlet?myid="
@@ -189,7 +189,7 @@ public class DdMoreActivity extends Activity {
 			}
 
 		} else if (item.getItemId() == 2) {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			String url = HttpUtil.BASE_URL + "DeleteAllGwcServlet?myid=" + myid;
 

@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;   
 import android.widget.TextView;   
   
-public class ImageSimpleAdapter extends SimpleAdapter {   
+public class ListSimpleAdapter extends SimpleAdapter {   
 	public List<Boolean> mChecked;
     private int[] mTo;   
     private String[] mFrom;   
@@ -31,7 +31,7 @@ public class ImageSimpleAdapter extends SimpleAdapter {
     HashMap<Integer,View> map = new HashMap<Integer,View>(); 
     Context context = null;
     int index=0;
-    public ImageSimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {   
+    public ListSimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {   
         super(context, data, resource, from, to);   
         mChecked = new ArrayList<Boolean>();
 		for(int i=0;i<data.size();i++){

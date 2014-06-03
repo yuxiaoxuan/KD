@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.dy.adapter.DdSimpleAdapter;
-import com.dy.beans.Declare;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;
@@ -36,13 +36,13 @@ public class DdListActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ddlist);
-		Declare declare = (Declare) getApplicationContext();
+		User declare = (User) getApplicationContext();
 		String username = declare.getUserName();
-		if (username == null) {
-			setTitle("当前位置---我的订单");
-		} else {
-			setTitle("您好：" + username + "   当前位置---我的订单");
-		}
+//		if (username == null) {
+//			setTitle("当前位置---我的订单");
+//		} else {
+//			setTitle("您好：" + username + "   当前位置---我的订单");
+//		}
 
 		setViews();
 	}
@@ -100,7 +100,7 @@ public class DdListActivity extends Activity {
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			System.out.println("myid          =" + myid);
 			String url = HttpUtil.BASE_URL + "DdListServlet?myid="+myid;

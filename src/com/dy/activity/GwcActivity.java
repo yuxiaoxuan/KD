@@ -11,7 +11,7 @@ import android.app.Dialog;
 import android.app.AlertDialog.Builder;
 
 import com.dy.adapter.GwcSimpleAdapter;
-import com.dy.beans.Declare;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;
@@ -34,7 +34,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class GwcListActivity extends Activity {
+public class GwcActivity extends Activity {
 
 	GwcSimpleAdapter adapter;
 	ListView lv;
@@ -50,7 +50,7 @@ public class GwcListActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.gwclist);
-		Declare declare = (Declare) getApplicationContext();
+		User declare = (User) getApplicationContext();
 		String username = declare.getUserName();
 		if (username == null) {
 			setTitle("当前位置---购物车");
@@ -106,7 +106,7 @@ public class GwcListActivity extends Activity {
 
 	// 删除
 	protected void dialog() {
-		Builder builder = new Builder(GwcListActivity.this);
+		Builder builder = new Builder(GwcActivity.this);
 		builder.setMessage("确认删除吗？");
 
 		builder.setTitle("提示");
@@ -116,7 +116,7 @@ public class GwcListActivity extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 
 				try {
-					Declare declare = (Declare) getApplicationContext();
+					User declare = (User) getApplicationContext();
 					int myid = declare.getId();
 					String url = HttpUtil.BASE_URL
 							+ "DeleteGwcServlet?myid="
@@ -160,17 +160,17 @@ public class GwcListActivity extends Activity {
 				goodsName = item.get("name") + "";
 				// goodsCount = item.get("count");
 				goodsCount = Integer.parseInt(item.get("count") + "");
-				et = new EditText(GwcListActivity.this);
+				et = new EditText(GwcActivity.this);
 				// 取得自定义View
 				final String[] input_num = new String[] { "1", "2", "3", "4",
 						"5" };
 
 				LayoutInflater layoutInflater = LayoutInflater
-						.from(GwcListActivity.this);
+						.from(GwcActivity.this);
 				View inputNumView = layoutInflater.inflate(R.layout.input_num,
 						null);
 				Dialog alertDialog = new AlertDialog.Builder(
-						GwcListActivity.this)
+						GwcActivity.this)
 						.setTitle("请输入购买数量")
 						.setIcon(android.R.drawable.ic_dialog_info)
 						// .setView(et)
@@ -198,7 +198,7 @@ public class GwcListActivity extends Activity {
 													"库存不足", 1).show();
 										} else {
 											try {
-												Declare declare = (Declare) getApplicationContext();
+												User declare = (User) getApplicationContext();
 												int myid = declare.getId();
 												String url = HttpUtil.BASE_URL
 														+ "UpdateGwcCountServlet?myid="
@@ -243,7 +243,7 @@ public class GwcListActivity extends Activity {
 				Toast.makeText(getApplicationContext(), "库存不足", 1).show();
 			} else {
 				try {
-					Declare declare = (Declare) getApplicationContext();
+					User declare = (User) getApplicationContext();
 					int myid = declare.getId();
 					String url = HttpUtil.BASE_URL
 							+ "UpdateGwcCountServlet?myid="
@@ -269,7 +269,7 @@ public class GwcListActivity extends Activity {
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			System.out.println("myid          =" + myid);
 			String url = HttpUtil.BASE_URL + "GwcListServlet?myid=" + myid;
@@ -313,11 +313,11 @@ public class GwcListActivity extends Activity {
 		if (item.getItemId() == 1) {// 确认提交
 
 			Intent intent = new Intent();
-			intent.setClass(GwcListActivity.this, GoodsListActivity.class);
+			intent.setClass(GwcActivity.this, GoodsGirdActivity.class);
 			startActivity(intent);
 
 		} else if (item.getItemId() == 2) {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			String url = HttpUtil.BASE_URL + "DeleteAllGwcServlet?myid=" + myid;
 
@@ -330,7 +330,7 @@ public class GwcListActivity extends Activity {
 
 		} else if (item.getItemId() == 3) {// 生成订单
 			Intent intent = new Intent();
-			intent.setClass(GwcListActivity.this, DingdanActivity.class);
+			intent.setClass(GwcActivity.this, DingdanActivity.class);
 			startActivity(intent);
 
 		} else if (item.getItemId() == 4) {

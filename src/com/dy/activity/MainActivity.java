@@ -76,11 +76,11 @@ public class MainActivity extends TabActivity implements OnClickListener{
 
 	private void prepareIntent() {
 		// TODO Auto-generated method stub
-		mItent1 = new Intent(this, GoodsListActivity.class);
-		mItent2 = new Intent(this, CopyOfGoodsListActivity.class);
-    	mItent3 = new Intent(this, GwcListActivity.class);
+		mItent1 = new Intent(this, GoodsGirdActivity.class);
+		mItent2 = new Intent(this, GoodsListActivity.class);
+    	mItent3 = new Intent(this, GwcActivity.class);
 		mItent4 = new Intent(this, DdListActivity.class);
-		mItent5 = new Intent(this, DetailActivity.class);
+		mItent5 = new Intent(this, MoreActivity.class);
 	}
 
 	

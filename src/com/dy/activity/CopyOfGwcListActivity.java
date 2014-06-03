@@ -11,7 +11,7 @@ import android.app.Dialog;
 import android.app.AlertDialog.Builder;
 
 import com.dy.adapter.GwcSimpleAdapter;
-import com.dy.beans.Declare;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;
@@ -48,7 +48,7 @@ public class CopyOfGwcListActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.gwclist);
-		Declare declare = (Declare) getApplicationContext();
+		User declare = (User) getApplicationContext();
 		String username = declare.getUserName();
 		if (username == null) {
 			setTitle("当前位置---购物车");
@@ -113,7 +113,7 @@ public class CopyOfGwcListActivity extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 
 				try {
-					Declare declare = (Declare) getApplicationContext();
+					User declare = (User) getApplicationContext();
 					int myid = declare.getId();
 					String url = HttpUtil.BASE_URL
 							+ "DeleteGwcServlet?myid="
@@ -187,7 +187,7 @@ public class CopyOfGwcListActivity extends Activity {
 					Toast.makeText(getApplicationContext(), "库存不足", 1).show();
 				}else{
 					try {
-						Declare declare = (Declare) getApplicationContext();
+						User declare = (User) getApplicationContext();
 						int myid = declare.getId();
 						String url = HttpUtil.BASE_URL
 								+ "UpdateGwcCountServlet?myid="
@@ -213,7 +213,7 @@ public class CopyOfGwcListActivity extends Activity {
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			System.out.println("myid          =" + myid);
 			String url = HttpUtil.BASE_URL + "GwcListServlet?myid="+myid;
@@ -258,11 +258,11 @@ public class CopyOfGwcListActivity extends Activity {
 			
 			Intent intent = new Intent();
 			intent.setClass(CopyOfGwcListActivity.this,
-					GoodsListActivity.class);
+					GoodsGirdActivity.class);
 			startActivity(intent);
 			
 		} else if (item.getItemId() == 2) {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			String url = HttpUtil.BASE_URL
 					+ "DeleteAllGwcServlet?myid="+ myid;

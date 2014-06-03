@@ -6,9 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.dy.adapter.CopyOfImageSimpleAdapter;
-import com.dy.adapter.ImageSimpleAdapter;
-import com.dy.beans.Declare;
+import com.dy.adapter.ListSimpleAdapter;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 import com.dy.util.ImageService;
 
@@ -18,21 +17,17 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 public class GoodsListActivity extends Activity {
-	private CopyOfImageSimpleAdapter adapter;
-	private GridView lv;
+
+	private ListSimpleAdapter adapter;
+	private ListView lv;
 	private EditText et;
 	private String question;
 	private List<Map<String, Object>> list;
@@ -41,68 +36,45 @@ public class GoodsListActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.goodshow);
-		Declare declare = (Declare) getApplicationContext();
+		setContentView(R.layout.goodslist);
+		User declare = (User) getApplicationContext();
 		String username = declare.getUserName();
-		// if (username == null) {
-		// setTitle("当前位置---商品列表");
-		// } else {
-		// setTitle("您好：" + username + "   当前位置---商品列表");
-		// }
+//		if (username == null) {
+//			setTitle("当前位置---商品列表");
+//		} else {
+//			setTitle("您好：" + username + "   当前位置---商品列表");
+//		}
 
 		setViews();
 	}
 
+	
+	
+	
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		
+	}
+
+
+
+
 	private void setViews() {
-		lv = (GridView) findViewById(R.id.lv_goods);
+		lv = (ListView) findViewById(R.id.h_list_view);
 		list = getDatas();
-		adapter = new CopyOfImageSimpleAdapter(this, list, R.layout.goods_item,
-				new String[] { "icon", "name", "price", "count", "text" },
-				new int[] { R.id.ml_icon, R.id.listName, R.id.listPrice,
-						R.id.listCount, R.id.listtext });
+		adapter = new ListSimpleAdapter(this, list, R.layout.message_list,
+				new String[] { "icon", "name", "price", "count" }, new int[] {
+						R.id.ml_icon, R.id.listName, R.id.listPrice,
+						R.id.listCount });
 		lv.setAdapter(adapter);
-		lv.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View arg1, int arg2,
-					long arg3) {
-				// TODO Auto-generated method stub
-
-				Log.i("===========================>>>>",
-						list.get(arg2).get("name").toString());
-				Log.i("===========================>>>>",
-						list.get(arg2).get("price").toString());
-				Log.i("===========================>>>>",
-						list.get(arg2).get("count").toString());
-				Log.i("===========================>>>>",
-						list.get(arg2).get("text").toString());
-
-				Intent i = new Intent(GoodsListActivity.this,
-						DetailActivity.class);
-
-				Bitmap bit = (Bitmap) list.get(arg2).get("icon");
-				Bundle bundle = new Bundle();
-				bundle.putParcelable("icon", bit);
-				bundle.putString("name", list.get(arg2).get("name").toString());
-				bundle.putString("price", list.get(arg2).get("price")
-						.toString());
-				bundle.putString("count", list.get(arg2).get("count")
-						.toString());
-				bundle.putString("text", list.get(arg2).get("text").toString());
-
-				i.putExtras(bundle);
-				startActivity(i);
-				// finish();
-
-			}
-		});
-
 	}
 
 	private List<Map<String, Object>> getDatas() {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
-			Declare declare = (Declare) getApplicationContext();
+			User declare = (User) getApplicationContext();
 			int myid = declare.getId();
 			System.out.println("myid          =" + myid);
 			String url = HttpUtil.BASE_URL + "GoodsListServlet";
@@ -126,14 +98,13 @@ public class GoodsListActivity extends Activity {
 					map.put("name", photos[0]);
 					map.put("price", photos[2]);
 					map.put("count", photos[3]);
-					map.put("text", photos[4]);
 
 					list.add(map);
 				}
 			}
 		} catch (Exception e) {
 
-			Toast.makeText(getApplicationContext(), "更新列表成功", 1).show();
+			Toast.makeText(getApplicationContext(), "", 1).show();
 		}
 		return list;
 	}
@@ -172,7 +143,7 @@ public class GoodsListActivity extends Activity {
 					System.out.println("goodsNamegoodsNamegoodsName   "
 							+ goodsName);
 					try {
-						Declare declare = (Declare) getApplicationContext();
+						User declare = (User) getApplicationContext();
 						int myid = declare.getId();
 						String url = HttpUtil.BASE_URL
 								+ "AddGoodsServlet?myid="
@@ -191,7 +162,7 @@ public class GoodsListActivity extends Activity {
 					}
 				}
 				Intent intent = new Intent();
-				intent.setClass(GoodsListActivity.this, GwcListActivity.class);
+				intent.setClass(GoodsListActivity.this, GwcActivity.class);
 				startActivity(intent);
 			}
 

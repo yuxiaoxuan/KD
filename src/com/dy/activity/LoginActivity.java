@@ -2,7 +2,7 @@ package com.dy.activity;
 
 import java.net.URLEncoder;
 
-import com.dy.beans.Declare;
+import com.dy.beans.User;
 import com.dy.util.HttpUtil;
 
 import android.app.Activity;
@@ -27,7 +27,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		// 设置当前Activity界面布局
-		setContentView(R.layout.login_system);
+		setContentView(R.layout.login_layout);
 		// 通过findViewById方法实例化组件
 		
 		loginBtn = (Button)findViewById(R.id.signin_button);
@@ -62,7 +62,7 @@ public class LoginActivity extends Activity {
 					System.out.println("=========================  "+result);
 					if(!result.equals("0")){
 						System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@");
-						Declare declare = (Declare) getApplicationContext();
+						User declare = (User) getApplicationContext();
 						declare.setId(Integer.parseInt(result));
 						declare.setUserName(userEditText.getText().toString());
 						Toast.makeText(getApplicationContext(), "登入成功", 1).show();

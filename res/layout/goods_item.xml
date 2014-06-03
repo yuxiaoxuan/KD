@@ -71,6 +71,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="3dip"
             android:text="面料很好，款式很好看，是一件不错的T恤哦！球片也很闪亮！大爱，以后还要来买传着很修身啊码数也正"
+            android:singleLine="true"
             android:textSize="7sp" />
 
         <TextView

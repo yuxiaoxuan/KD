@@ -3,45 +3,31 @@
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/login"
+	android:background="@drawable/bg_login"
 	>
-	
+	 <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_margin="12dip"
+        android:layout_weight="0.3"
+        android:src="@drawable/logo1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.1"
+        android:text="大学校园闲置物品交易平台" 
+        android:textColor="#ff990066"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        />
 	<TableLayout 
 	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent" 
+	android:layout_height="0dip"
+	android:layout_weight="0.6" 
 	android:stretchColumns="1">
 	
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			
-			<TableRow>
-					<TextView android:text="" />
-					<TextView android:text="" />
-			</TableRow>
-			
+		
 	
 		<TableRow>
 			<TextView 
@@ -113,20 +99,21 @@
 			android:password="true"/>
 			
 		</TableRow>
-		    
+		   
 		<TableRow 
 			android:gravity="right">
-				<Button 
-				android:text="确定" 
-				android:id="@+id/registerButton1"
-				android:layout_height="wrap_content" 
-				android:layout_width="wrap_content"/>
+				
 	
 			<Button 
 				android:text="重置" 
 				android:id="@+id/registerButton2"
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"/>
+			<Button 
+				android:text="确定" 
+				android:id="@+id/registerButton1"
+				android:layout_height="wrap_content" 
+				android:layout_width="wrap_content"/>
 		
 		</TableRow>
 

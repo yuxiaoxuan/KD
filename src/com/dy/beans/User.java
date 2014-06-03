@@ -2,7 +2,7 @@ package com.dy.beans;
 
 import android.app.Application;
 
-public class Declare extends Application {
+public class User extends Application {
 
 	private int id;
     private String userName;

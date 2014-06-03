@@ -85,10 +85,10 @@ public class GwcSimpleAdapter extends SimpleAdapter {
 			view.setTag(holder);
 		} else {
 			view = map.get(position);
-			//holder = (GwcViewHolder) view.getTag();
+//			holder = (GwcViewHolder) view.getTag();
 		}
 
-		// holder.button.
+		
 		holder.name.setText(mData.get(position).get("name").toString());
 		holder.price.setText(mData.get(position).get("price").toString());
 		holder.count.setText(mData.get(position).get("count").toString());

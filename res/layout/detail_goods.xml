@@ -10,7 +10,9 @@
 
     <include
         android:id="@+id/title"
-        layout="@layout/top_title" />
+        layout="@layout/top_title"
+        
+         />
 
     <ScrollView
         android:id="@+id/mScroll"
@@ -66,7 +68,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal" >
 
-                <TextView
+                <Button
                     android:id="@+id/detail_buy_button"
                     android:layout_width="100dip"
                     android:layout_height="50dip"

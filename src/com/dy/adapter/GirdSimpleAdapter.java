@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;   
 import android.widget.TextView;   
   
-public class CopyOfImageSimpleAdapter extends SimpleAdapter {   
+public class GirdSimpleAdapter extends SimpleAdapter {   
 	public List<Boolean> mChecked;
     private int[] mTo;   
     private String[] mFrom;   
@@ -31,7 +31,7 @@ public class CopyOfImageSimpleAdapter extends SimpleAdapter {
     HashMap<Integer,View> map = new HashMap<Integer,View>(); 
     Context context = null;
     int index=0;
-    public CopyOfImageSimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {   
+    public GirdSimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {   
         super(context, data, resource, from, to);   
         mChecked = new ArrayList<Boolean>();
 		for(int i=0;i<data.size();i++){
