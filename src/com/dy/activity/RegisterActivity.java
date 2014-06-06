@@ -1,10 +1,13 @@
 package com.dy.activity;
 
 import java.net.URLEncoder;
+
 import com.dy.util.HttpUtil;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,6 +66,7 @@ public class RegisterActivity extends Activity {
 										"UTF-8");
 						// 查询返回结果
 						String result = HttpUtil.queryStringForPost(url);
+						Log.d("registerBUG===>   ",result);
 						if (result.equals("1")) {
 							Toast.makeText(getApplicationContext(), "注册成功", 1)
 									.show();

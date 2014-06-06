@@ -12,6 +12,7 @@ import org.apache.http.util.EntityUtils;
 public class HttpUtil {
 	// 基础URL
 	public static final String BASE_URL="http://192.168.0.102:8080/ShopServer/";
+//	public static final String BASE_URL="http://localhost:8080/ShopServer/";
 	// 获得Get请求对象request
 	public static HttpGet getHttpGet(String url){
 		HttpGet request = new HttpGet(url);
